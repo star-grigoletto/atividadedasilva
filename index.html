@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20204a">
+  <meta name="description" content="Uma palavra nova por dia. Descubra a resposta em até seis tentativas.">
+  <title>Palavra do Dia — um desafio, seis tentativas</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/game.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Palavra do Dia, início">
+        <span class="wordmark-icon" aria-hidden="true">P</span>
+        <span>palavra<span class="wordmark-light"> do dia</span></span>
+      </a>
+      <span class="daily-tag"><span class="daily-dot" aria-hidden="true"></span> UM NOVO DESAFIO TODO DIA</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Seu momento de pausa</p>
+      <h1 id="page-title">Uma palavra.<br><span>Seis chances.</span></h1>
+      <p class="intro-copy">Descubra a palavra de 5 letras em até 6 tentativas. As cores e símbolos mostram o que você descobriu. Acentos não fazem diferença.</p>
+    </section>
+
+    <section class="game-layout" aria-label="Jogo do dia">
+      <article class="game-card" aria-labelledby="game-title">
+        <header class="game-card-header">
+          <div>
+            <p class="card-kicker">DESAFIO DE HOJE</p>
+            <h2 id="game-title">Vamos nessa?</h2>
+            <p class="game-date" id="game-date">Carregando desafio…</p>
+          </div>
+          <div class="attempt-counter" id="attempt-counter" aria-label="Tentativas restantes">—<span> chances</span></div>
+        </header>
+
+        <div class="board" id="board" role="group" aria-label="Tabuleiro com seis tentativas e cinco letras por tentativa" aria-describedby="board-help"></div>
+        <p class="visually-hidden" id="board-help">Cada linha é uma tentativa. Após enviar, cada letra informa se está na palavra e se está na posição correta.</p>
+
+        <form class="guess-form" id="guess-form" novalidate>
+          <label class="visually-hidden" for="guess-input">Seu palpite, cinco letras</label>
+          <input id="guess-input" name="guess" type="text" maxlength="5" inputmode="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" placeholder="Digite sua palavra" aria-describedby="guess-hint game-message">
+          <button class="submit-button" id="submit-button" type="submit" disabled>Enviar <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="input-hint" id="guess-hint">5 letras · pode digitar com ou sem acento</p>
+        <p class="game-message" id="game-message" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <section class="keyboard" id="keyboard" aria-label="Teclado virtual">
+          <div class="keyboard-row" data-row="QWERTYUIOP"></div>
+          <div class="keyboard-row" data-row="ASDFGHJKL"></div>
+          <div class="keyboard-row keyboard-row-last" data-row="ZXCVBNMÇ"></div>
+        </section>
+        <p class="keyboard-help">Ou use o teclado do seu dispositivo <span aria-hidden="true">⌨</span></p>
+      </article>
+
+      <aside class="how-card" aria-labelledby="how-title">
+        <div class="how-icon" aria-hidden="true">✳</div>
+        <h2 id="how-title">Como jogar</h2>
+        <p>Digite uma palavra de cinco letras. Você tem seis tentativas para descobrir a palavra do dia.</p>
+        <ul class="legend">
+          <li><span class="legend-tile legend-correct" aria-hidden="true">✓</span><span><strong>No lugar certo</strong><small>A letra e a posição estão corretas.</small></span></li>
+          <li><span class="legend-tile legend-present" aria-hidden="true">↔</span><span><strong>Está na palavra</strong><small>Mas em outra posição.</small></span></li>
+          <li><span class="legend-tile legend-absent" aria-hidden="true">×</span><span><strong>Não aparece</strong><small>Essa letra não está na resposta.</small></span></li>
+        </ul>
+        <div class="daily-note"><span aria-hidden="true">☀</span><p>Uma palavra nova, todos os dias.<br><strong>Seu progresso fica salvo aqui.</strong></p></div>
+      </aside>
+    </section>
+
+    <footer class="site-footer">
+      <span>Feito para uma pausa gostosa.</span>
+      <span>Sem cadastro. Sem pressa. Só palavras.</span>
+    </footer>
+  </main>
+</body>
+</html>
